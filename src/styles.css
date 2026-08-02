@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
-:root { font-family: 'DM Sans', sans-serif; color: #e9f3ef; background: #07120f; font-synthesis: none; }
+:root { font-family: 'DM Sans', sans-serif; color: #f0efff; background: #120d2b; font-synthesis: none; }
 * { box-sizing: border-box; }
 body { margin: 0; min-width: 320px; min-height: 100vh; }
 button, input, select { font: inherit; }
 button { cursor: pointer; }
-.hero { min-height: 420px; padding: 28px max(5vw, 24px); background: radial-gradient(circle at 80% 20%, rgba(128, 255, 48, .16), transparent 25%), radial-gradient(circle at 20% 95%, rgba(25, 206, 159, .13), transparent 25%), linear-gradient(160deg, #0b211a, #06100d 70%); border-bottom: 1px solid #1c372f; position: relative; overflow: hidden; }
+.hero { min-height: 420px; padding: 28px max(5vw, 24px); background: radial-gradient(circle at 80% 20%, rgba(168, 85, 247, .32), transparent 28%), radial-gradient(circle at 20% 95%, rgba(59, 130, 246, .24), transparent 28%), linear-gradient(160deg, #24164f, #0d0922 70%); border-bottom: 1px solid #3d2d70; position: relative; overflow: hidden; }
 .hero::after { content: ''; position: absolute; width: 320px; height: 320px; border: 1px solid rgba(147,255,75,.15); border-radius: 50%; right: 8%; top: 90px; box-shadow: 0 0 80px rgba(128,255,48,.08), inset 0 0 70px rgba(128,255,48,.06); }
 nav { max-width: 1240px; margin: auto; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
 .logo { font: 700 21px 'Space Grotesk'; display: flex; gap: 9px; align-items: center; color: #b7ff52; }
