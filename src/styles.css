@@ -16,7 +16,7 @@ h1 { font: 700 clamp(42px, 7vw, 82px)/.95 'Space Grotesk'; max-width: 780px; mar
 h1 em { color: #a6ef4d; font-style: normal; }
 .hero-copy > p:last-child { color: #9cafaa; font-size: 18px; }
 .content { max-width: 1240px; margin: -45px auto 0; padding: 0 24px 70px; position: relative; z-index: 2; }
-.filters { background: rgba(18, 39, 32, .94); border: 1px solid #28463d; border-radius: 18px; padding: 19px; display: grid; grid-template-columns: 2fr 1fr 1.15fr 1fr auto auto; gap: 12px; box-shadow: 0 18px 50px rgba(0,0,0,.3); backdrop-filter: blur(16px); align-items: end; }
+.filters { background: rgba(18, 39, 32, .94); border: 1px solid #28463d; border-radius: 18px; padding: 19px; display: grid; grid-template-columns: 2fr 1fr 1.15fr 1fr auto; gap: 12px; box-shadow: 0 18px 50px rgba(0,0,0,.3); backdrop-filter: blur(16px); align-items: end; }
 label span { display: block; color: #8ca198; font-size: 12px; font-weight: 600; margin: 0 0 7px 3px; }
 input, select { width: 100%; height: 46px; color: #ecf6f1; background: #0b1c17; border: 1px solid #2b453d; border-radius: 10px; padding: 0 12px; outline: none; }
 input:focus, select:focus { border-color: #91df42; box-shadow: 0 0 0 3px rgba(145,223,66,.1); }

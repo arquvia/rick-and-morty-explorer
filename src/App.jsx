@@ -41,6 +41,15 @@ export default function App() {
   const [error, setError] = useState('')
 
   useEffect(() => {
+    const debounce = setTimeout(() => {
+      setPage(1)
+      setQuery((current) => JSON.stringify(current) === JSON.stringify(filters) ? current : filters)
+    }, 400)
+
+    return () => clearTimeout(debounce)
+  }, [filters])
+
+  useEffect(() => {
     const controller = new AbortController()
     const params = new URLSearchParams({ page: String(page) })
     Object.entries(query).forEach(([key, value]) => value && params.set(key, value))
@@ -64,11 +73,6 @@ export default function App() {
   }, [query, page])
 
   const updateFilter = (event) => setFilters((current) => ({ ...current, [event.target.name]: event.target.value }))
-  const applyFilters = (event) => {
-    event.preventDefault()
-    setPage(1)
-    setQuery(filters)
-  }
   const resetFilters = () => {
     setFilters(INITIAL_FILTERS)
     setQuery(INITIAL_FILTERS)
@@ -87,14 +91,13 @@ export default function App() {
       </header>
 
       <section className="content">
-        <form className="filters" onSubmit={applyFilters}>
-          <label className="search-field"><span>Buscar personaje</span><div><Search size={18} /><input name="name" value={filters.name} onChange={updateFilter} placeholder="Ej. Rick, Morty, Summer..." /></div></label>
+        <div className="filters">
+          <label className="search-field"><span>Buscar personaje · automático</span><div><Search size={18} /><input name="name" value={filters.name} onChange={updateFilter} placeholder="Ej. Rick, Morty, Summer..." /></div></label>
           <label><span>Estado</span><select name="status" value={filters.status} onChange={updateFilter}><option value="">Todos</option><option value="alive">Vivo</option><option value="dead">Muerto</option><option value="unknown">Desconocido</option></select></label>
           <label><span>Especie</span><input name="species" value={filters.species} onChange={updateFilter} placeholder="Ej. Human, Alien..." /></label>
           <label><span>Género</span><select name="gender" value={filters.gender} onChange={updateFilter}><option value="">Todos</option><option value="female">Femenino</option><option value="male">Masculino</option><option value="genderless">Sin género</option><option value="unknown">Desconocido</option></select></label>
-          <button className="primary" type="submit"><Search size={18} /> Buscar</button>
           <button className="reset" type="button" onClick={resetFilters} title="Limpiar filtros"><RotateCcw size={19} /></button>
-        </form>
+        </div>
 
         <div className="results-heading">
           <div><p className="kicker">Archivo interdimensional</p><h2>{loading ? 'Abriendo portales...' : `${info.count} personajes encontrados`}</h2></div>
